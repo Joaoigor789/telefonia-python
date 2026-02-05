@@ -1,0 +1,125 @@
+## 📞 API de Consulta Telefônica BR
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green?logo=fastapi)
+![Node.js](https://img.shields.io/badge/Node.js-18+-brightgreen?logo=node.js)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+API para **validação e consulta de números telefônicos brasileiros**, utilizando  
+**Python (FastAPI)** + **Node.js (Express)** + **Docker Compose**.
+
+---
+
+## 🧠 Arquitetura
+
+- **Python / FastAPI** → Validação e consulta de telefone
+- **Node.js / Express** → API Gateway
+- **Docker Compose** → Orquestração dos serviços
+- **tel.py** → Biblioteca interna de consulta
+
+---
+
+## ▶️ Uso via terminal (modo script)
+
+> ⚠️ **Opcional** — apenas se quiser usar fora da API
+
+No terminal:
+
+```bash
+python tel.py ddd+numero
+```
+
+Exemplo:
+python tel.py 62981632892
+
+API Key (OpenCellID)
+
+Para testes, utilize:
+
+OCEL_KEY="test"
+
+
+Para uso real:
+
+Crie uma conta em
+👉 https://opencellid.org/
+
+Gere sua API Key
+
+Substitua no projeto
+
+-------------------------------------------
+NÃO EXECUTE MANUALMENTE (modo Docker)
+
+❌ Não rode estes comandos manualmente quando estiver usando Docker:
+
+uvicorn drop.pad:app --reload
+node index.js
+
+
+✔ O Docker executa tudo automaticamente.
+
+```
+Endpoints disponíveis
+
+Após subir os containers:
+
+🔹 API Python (FastAPI)
+http://127.0.0.1:8000/
+
+🔹 API Node (Gateway)
+http://localhost:3001/
+
+🔎 Consulta direta no navegador
+http://localhost:8000/consulta?numero=62981632892
+
+
+```
+
+Executando com Docker (recomendado)
+Primeira execução / rebuild
+docker compose up --build
+
+Execução normal
+docker compose up
+
+🧹 Parar e limpar containers
+docker compose down
+docker container prune -f
+
+📦 Dependências externas
+
+Node.js
+👉 https://nodejs.org/pt-br/download
+
+Docker
+👉 https://www.docker.com/
+
+## Estrutura do projeto (exemplo)
+.
+├── api-python/
+│   ├── pad.py
+│   ├── tel.py
+│   └── requirements.txt
+│
+├── api-node/
+│   ├── index.js
+│   └── package.json
+│
+├── docker-compose.yml
+└── README.md
+
+## 🛡️ Licença
+
+Este projeto está sob a licença MIT.
+Sinta-se livre para usar, modificar e distribuir.
+
+## Status do Projeto
+
+✔ Funcional
+✔ Dockerizado
+✔ Pronto para produção / estudos
+✔ Fácil integração com frontend
+
+## Desenvolvido com 💙 por João Igor / HostingDevPro
