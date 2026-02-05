@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  api-python:
+    build: ./api-python
+    container_name: api-python
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api-python:/app
+    restart: unless-stopped
+
+  api-node:
+    build: ./api-node
+    container_name: api-node
+    ports:
+      - "3001:3000"
+    depends_on:
+      - api-python
+    restart: unless-stopped
